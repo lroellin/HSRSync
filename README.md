@@ -1,7 +1,7 @@
 # HSRSync
 HSR Sync script for Windows. Automatically establishes VPN (if installed) and quite customizable.
 
-## This script runs in Powershell and does 3 things:
+## Does
 * Check network connection. If not in HSR network, connect via VPN
   * Ask for credentials (with default username as you don't want to type that every time
   * Check if it succeeded, or abort
