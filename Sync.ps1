@@ -1,9 +1,9 @@
 ﻿# Include library
 . ".\Library.ps1" 
 
-$BasePathSDrive = "\\hsr.ch\root"
-$BasePathSLetter = "Y"
-$BasePathSource = "${BasePathSLetter}:\alg\skripte"
+$NetworkDrive = "\\hsr.ch\root"
+$NetworkDriveLetter = "Y"
+$BasePathSource = "${NetworkDriveLetter}:\alg\skripte"
 $BasePathDestination = "C:\HSR\Sync"
 $VPNHost = "vpn.hsr.ch"
 $DefaultVPNUsername = "lroellin"
@@ -30,7 +30,7 @@ If(!(Test-Connection -ComputerName $VPNTestHost -Quiet -Count 1)) {
 }
 
 Write-Step -Message "Mapping network drive..."
-New-PSDrive -Name "Y" -PSProvider FileSystem -Root $BasePathSDrive -Persist -ErrorAction SilentlyContinue
+New-PSDrive -Name "Y" -PSProvider FileSystem -Root $NetworkDrive -Persist -ErrorAction SilentlyContinue
 Write-Success -Message "Mapped."
 
 # Module
@@ -38,6 +38,7 @@ $ModulePaths = "Informatik\Fachbereich\Algorithmen_und_Datenstrukturen_2", "Info
 
 Write-Step -Message "Syncing..."
 Foreach($ModulePath in $ModulePaths) {
+    # Using only last part of module path for the local name
     $Name = Split-Path -Path $ModulePath -Leaf
     $SyncSource = Join-Path -Path $BasePathSource -ChildPath $ModulePath
     $SyncDestination = Join-Path $BasePathDestination -ChildPath $Name
@@ -53,4 +54,4 @@ Foreach($ModulePath in $ModulePaths) {
 }
 Write-Success -Message "Synced."
 
-Remove-PSDrive $BasePathSLetter
+Remove-PSDrive $NetworkDriveLetter
