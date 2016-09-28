@@ -24,7 +24,7 @@ You can also customize your modules to sync.
 ## How to run
 * Customize the values to your environment
 * This is an unsigned Powershell Script. You may need to change your Execution Policy. There are many manuals on the Internet
-* Right click / Run with Powershell
+* Right click / Run with Powershell. For convenience, there is also a batch file that does exactly that.
 
 ## Requirements
 You need to have the Cisco AnyConnect VPN client installed. If it's not found, check the parameters in VPN.ps1
