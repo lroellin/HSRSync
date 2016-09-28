@@ -3,7 +3,7 @@ HSR Sync script for Windows. Automatically establishes VPN (if installed) and qu
 
 ## Does
 * Check network connection. If not in HSR network, connect via VPN
-  * Ask for credentials (with default username as you don't want to type that every time
+  * Ask for credentials (with default username as you don't want to type that every time)
   * Check if it succeeded, or abort
 * Maps the network drive
 * Syncs, will only display new or changed files
