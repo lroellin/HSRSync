@@ -24,41 +24,9 @@ You can also customize your modules to sync.
 
 ## Configuration
 An XML configuration file is **necessary** for running the script.
-The location of this file can be changed at the top of the script. Default is *settings.xml*
+The location of this file can be changed at the top of the script. Default is *settings.xml*. There is a template, *settings-template.xml* which you can use. 
 
-The example below is based on the XML-schema defined in *settings.xsd*.
-Your own configuration must follow this schema to be interpreted properly.
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<sync
-	xmlns="https://github.com/lroellin/HSRSync"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<configuration>
-		<network>
-			<drive>\\hsr.ch\root</drive>
-			<driveLetter>Y</driveLetter>
-		</network>
-		<basePath>
-			<source>alg\skripte</source>
-			<destination>YOUR_DESTINATION_FOLDER</destination>
-		</basePath>
-		<vpn>
-			<host>vpn.hsr.ch</host>
-			<username>YOUR_HSR_USERNAME</username>
-			<testHost>skripte.hsr.ch</testHost>
-			<waitTime>10</waitTime>
-		</vpn>
-	</configuration>
-	<sources>
-		<source>Informatik\Fachbereich\Algorithmen_und_Datenstrukturen_2</source>
-		<source>Informatik\Fachbereich\C++</source>
-		<source>Informatik\Fachbereich\Computernetze_1</source>
-		<source>Informatik\Fachbereich\Informations-_und_Codierungstheorie</source>
-	</sources>
-</sync>
-
-```
-
+The example below is based on the XML-schema defined in *settings.xsd*. Your own configuration must follow this schema to be interpreted properly.
 ## How to run
 * Customize the values to your environment
 * This is an unsigned Powershell Script. You may need to change your Execution Policy. There are many manuals on the Internet
