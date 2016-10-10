@@ -23,8 +23,8 @@ Almost every aspect is customizable by changing your XML configuration.
 You can also customize your modules to sync.
 
 ## Configuration
-An XML configuration file is **nescessary** for running the script.
-The location of this file can be changed at the top of the script.
+An XML configuration file is **necessary** for running the script.
+The location of this file can be changed at the top of the script. Default is *settings.xml*
 
 The example below is based on the XML-schema defined in *settings.xsd*.
 Your own configuration must follow this schema to be interpreted properly.
@@ -63,9 +63,6 @@ Your own configuration must follow this schema to be interpreted properly.
 * Customize the values to your environment
 * This is an unsigned Powershell Script. You may need to change your Execution Policy. There are many manuals on the Internet
 * Right click / Run with Powershell. For convenience, there is also a batch file that does exactly that.
-
-## How to update
-Currently you'll have to overwrite the whole script whenver I publish an update you want to install. In the future, there will be an XML-based configuration.
 
 ## Requirements
 You need to have the Cisco AnyConnect VPN client installed. If it's not found, check the parameters in VPN.ps1
