@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+ 	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="https://github.com/lroellin/HSRSync"
+	xmlns="https://github.com/lroellin/HSRSync">
+	<xs:element name="sync">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="network">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="drive" type="xs:string"/>
+										<xs:element name="driveLetter" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="basePath">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="source" type="xs:string"/>
+										<xs:element name="destination" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="vpn">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="host" type="xs:string"/>
+										<xs:element name="username" type="xs:string"/>
+										<xs:element name="testHost" type="xs:string"/>
+										<xs:element name="waitTime" type="xs:integer"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sources">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" minOccurs="1" name="source" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

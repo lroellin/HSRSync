@@ -1,14 +1,18 @@
 ﻿# Include library
 . ".\Library.ps1" 
 
-$NetworkDrive = "\\hsr.ch\root"
-$NetworkDriveLetter = "Y"
-$BasePathSource = "${NetworkDriveLetter}:\alg\skripte"
-$BasePathDestination = "C:\HSR\Sync"
-$VPNHost = "vpn.hsr.ch"
-$DefaultVPNUsername = "lroellin"
-$VPNTestHost = "skripte.hsr.ch"
-$VPNWait = 10 
+[xml]$Settings = Get-Content ".\settings.xml"
+
+$NetworkDrive = $Settings.sync.configuration.network.drive
+$NetworkDriveLetter = $Settings.sync.configuration.network.driveLetter
+$BasePathSourceFolder = $Settings.sync.configuration.basePath.source
+$BasePathDestinationFolder = $Settings.sync.configuration.basePath.destination
+$BasePathSource = "${NetworkDriveLetter}:\" + ${BasePathSourceFolder}
+$BasePathDestination = "${BasePathDestinationFolder}\"
+$VPNHost = $Settings.sync.configuration.vpn.host
+$DefaultVPNUsername = $Settings.sync.configuration.vpn.username
+$VPNTestHost = $Settings.sync.configuration.vpn.testHost
+$VPNWait = $Settings.sync.configuration.vpn.waitTime
 
 Write-Step -Message "Checking network connection"
 If(!(Test-Connection -ComputerName $VPNTestHost -Quiet -Count 1)) {
@@ -38,7 +42,7 @@ $ModulePaths = "Informatik\Fachbereich\Algorithmen_und_Datenstrukturen_2", "Info
 
 Write-Step -Message "Syncing..."
 $StartTime = Get-Date
-Foreach($ModulePath in $ModulePaths) {
+Foreach($ModulePath in $Settings.sync.sources.source) {
     # Using only last part of module path for the local name
     $Name = Split-Path -Path $ModulePath -Leaf
     $SyncSource = Join-Path -Path $BasePathSource -ChildPath $ModulePath
