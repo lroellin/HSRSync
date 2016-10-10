@@ -7,6 +7,7 @@ HSR Sync script for Windows. Automatically establishes VPN (if installed) and qu
   * Check if it succeeded, or abort
 * Maps the network drive
 * Syncs, will only display new or changed files
+* Displays a small (toast) notification when done
 
 ## Customizability
 Almost every aspect is customizable by changing a single variable at the top.
@@ -33,4 +34,5 @@ Currently you'll have to overwrite the whole script whenver I publish an update 
 You need to have the Cisco AnyConnect VPN client installed. If it's not found, check the parameters in VPN.ps1
 
 ## Credits
-VPN.ps1 is the work of www.cze.cz and only customized slightly. 
+* VPN.ps1 is the work of www.cze.cz. Customized slightly
+* Toast notification code is the work of 'altrive'. Customized slightly.
