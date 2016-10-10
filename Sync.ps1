@@ -50,7 +50,7 @@ Foreach($ModulePath in $ModulePaths) {
         Exit
     }
     TestCreate-Directory -Dir $SyncDestination
-    Write-Host "Syncing $Name"
+    Write-Host "Syncing ${Name}..."
     Start-Process -FilePath "Robocopy.exe" -ArgumentList "`"$SyncSource`" `"$SyncDestination`" /MIR /eta /ndl /njh /njs" -NoNewWindow -Wait
 }
 Write-Success -Message "Synced."
