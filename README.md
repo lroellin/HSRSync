@@ -33,6 +33,9 @@ Currently you'll have to overwrite the whole script whenver I publish an update 
 ## Requirements
 You need to have the Cisco AnyConnect VPN client installed. If it's not found, check the parameters in VPN.ps1
 
+## License
+I used the MIT license as I don't want you to open-source everything when you use this code in any of your code. It's appreciated though and I'm always happy about pull requests.
+
 ## Credits
 * VPN.ps1 is the work of www.cze.cz. Customized slightly
 * Toast notification code is the work of 'altrive'. Customized slightly.
