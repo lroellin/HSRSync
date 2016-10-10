@@ -5,9 +5,10 @@
 
 $NetworkDrive = $Settings.sync.configuration.network.drive
 $NetworkDriveLetter = $Settings.sync.configuration.network.driveLetter
+$NetworkDriveLetterWithColon = $NetworkDriveLetter + ":"
 $BasePathSourceFolder = $Settings.sync.configuration.basePath.source
 $BasePathDestinationFolder = $Settings.sync.configuration.basePath.destination
-$BasePathSource = "${NetworkDriveLetter}:\" + ${BasePathSourceFolder}
+$BasePathSource = Join-Path -Path $NetworkDriveLetterWithColon -ChildPath $BasePathSourceFolder
 $BasePathDestination = "${BasePathDestinationFolder}\"
 $VPNHost = $Settings.sync.configuration.vpn.host
 $DefaultVPNUsername = $Settings.sync.configuration.vpn.username
@@ -34,7 +35,7 @@ If(!(Test-Connection -ComputerName $VPNTestHost -Quiet -Count 1)) {
 }
 
 Write-Step -Message "Mapping network drive..."
-New-PSDrive -Name "Y" -PSProvider FileSystem -Root $NetworkDrive -Persist -ErrorAction SilentlyContinue
+New-PSDrive -Name $NetworkDriveLetter -PSProvider FileSystem -Root $NetworkDrive -Persist -ErrorAction SilentlyContinue
 Write-Success -Message "Mapped."
 
 # Module
