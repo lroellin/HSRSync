@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sync
+    xmlns="https://github.com/lroellin/HSRSync"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <configuration>
+        <network>
+            <drive>\\hsr.ch\root</drive>
+            <driveLetter>Y</driveLetter>
+        </network>
+        <basePath>
+            <source>alg\skripte</source>
+            <destination>YOUR_DESTINATION_FOLDER</destination>
+        </basePath>
+        <vpn>
+            <host>vpn.hsr.ch</host>
+            <username>YOUR_HSR_USERNAME</username>
+            <testHost>skripte.hsr.ch</testHost>
+            <waitTime>10</waitTime>
+        </vpn>
+    </configuration>
+    <sources>
+        <source>Informatik\Fachbereich\Algorithmen_und_Datenstrukturen_2</source>
+        <source>Informatik\Fachbereich\C++</source>
+        <source>Informatik\Fachbereich\Computernetze_1</source>
+        <source>Informatik\Fachbereich\Informations-_und_Codierungstheorie</source>
+    </sources>
+</sync>
