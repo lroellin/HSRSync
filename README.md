@@ -26,7 +26,9 @@ You can also customize your modules to sync.
 An XML configuration file is **necessary** for running the script.
 The location of this file can be changed at the top of the script. Default is *settings.xml*. There is a template, *settings-template.xml* which you can use. 
 
-The example below is based on the XML-schema defined in *settings.xsd*. Your own configuration must follow this schema to be interpreted properly.
+### Details
+The template is based on the XML schema defined in *settings.xsd*. Your own configuration must follow this schema to be interpreted properly.
+
 ## How to run
 * Customize the values to your environment
 * This is an unsigned Powershell Script. You may need to change your Execution Policy. There are many manuals on the Internet
