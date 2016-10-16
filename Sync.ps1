@@ -8,7 +8,6 @@ $NetworkDriveLetter = $Settings.sync.configuration.network.driveLetter
 $NetworkDriveLetterWithColon = $NetworkDriveLetter + ":"
 $BasePathSourceFolder = $Settings.sync.configuration.basePath.source
 $BasePathDestinationFolder = $Settings.sync.configuration.basePath.destination
-$BasePathSource = Join-Path -Path $NetworkDriveLetterWithColon -ChildPath $BasePathSourceFolder
 $BasePathDestination = "${BasePathDestinationFolder}\"
 $VPNHost = $Settings.sync.configuration.vpn.host
 $DefaultVPNUsername = $Settings.sync.configuration.vpn.username
@@ -25,7 +24,7 @@ If(!(Test-Connection -ComputerName $VPNTestHost -Quiet -Count 1)) {
     Write-Host "Waiting a bit..."
     Sleep $VPNWait
     If(!(Test-Connection -ComputerName $VPNTestHost -Quiet -Count 1)) {
-        Write-Error "VPN not connected. Check the error in the command window in the background, or increase `$VPNWait if the connection takes longer to establish."
+        Write-Error "VPN not connected. Check the error in the command window in the background, or increase <waitTime> if the connection takes longer to establish."
         Pause-Script 
         Exit
     }
