@@ -41,5 +41,6 @@ You need to have the Cisco AnyConnect VPN client installed. If it's not found, c
 I used the MIT license as I don't want you to open-source everything when you use this code in any of your code. It's appreciated though and I'm always happy about pull requests.
 
 ## Credits
+* XML configuration is the work of [McDonnough](https://github.com/McDonnough).
 * VPN.ps1 is the work of www.cze.cz. Customized slightly
 * Toast notification code is the work of 'altrive'. Customized slightly.
